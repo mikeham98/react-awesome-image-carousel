@@ -1,0 +1,10 @@
+.imageSlider {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+
+.fadeImage {
+  transition-property: opacity;
+  transition-timing-function: ease-in-out;
+}

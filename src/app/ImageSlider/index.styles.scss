@@ -1,0 +1,24 @@
+.sliderImage {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+//
+//.fade-enter {
+//  opacity: 0;
+//}
+//
+//.fade-enter-active {
+//  opacity: 1;
+//  transition: opacity 200ms;
+//}
+
+.fade-exit {
+  opacity: 1;
+  z-index: 10;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms;
+}
