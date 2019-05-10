@@ -6,7 +6,7 @@
     "build": "webpack --mode production",
     "fix-code": "prettier-eslint --write './src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write './src/**/*.{css,scss}' ",
-    "updateLink": "npm rm react-awesome-calendar -g && npm link react-awesome-calendar"
+    "updateLink": "npm rm react-awesome-image-slider -g && npm link react-awesome-image-slider"
   },
   "browserslist": [
     ">0.2%",

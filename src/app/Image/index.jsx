@@ -1,34 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import styles from './index.styles.scss';
 
-export default class Image extends React.PureComponent {
-  returnClassName() {
-    const classNames = [styles.imageSlider];
-    if (this.props.fade) {
-      classNames.push(styles.fadeImage);
-    }
-    return classnames(classNames);
+export default class ImageFader extends React.PureComponent {
+  componentDidMount() {
+    this.setTransitionFadeDuration();
   }
 
-  returnStyle() {
-    let opacity = 0;
-    if (this.props.isCurrent) {
-      opacity = 1;
+  setTransitionFadeDuration() {
+    let images = document.getElementsByClassName('fadeImage');
+    let size = images.length;
+
+    for (let i = 0; i < size; i++) {
+      let image = images[i];
+      image.style.transitionDuration = `${this.props.transitionDuration}s`;
     }
-    return {
-      opacity,
-    };
   }
 
   render() {
-    const { src } = this.props;
+    const { isCurrent, src } = this.props;
     return (
       <img
         src={src}
-        className={this.returnClassName()}
-        style={this.returnStyle()}
+        className={classnames([styles.imageSlider, styles.fadeImage])}
+        style={{
+          opacity: isCurrent ? 1 : 0
+        }}
       />
     );
   }
 }
+
+ImageFader.propTypes = {
+  isCurrent: PropTypes.bool,
+  src: PropTypes.string,
+};

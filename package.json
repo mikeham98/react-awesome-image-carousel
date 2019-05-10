@@ -1,15 +1,15 @@
 {
-  "name": "react-awesome-image-slider",
+  "name": "react-awesome-image-viewer",
   "version": "1.0.1",
   "license": "MIT",
   "author": "Michael Hamilton",
-  "description": "An easy to use React Image Slider component",
+  "description": "An easy to use React Image Viewer component",
   "keywords": [
     "image",
     "slider",
     "viewer",
     "react",
-    "react-awesome-image-slider",
+    "react-awesome-image-viewer",
     "awesome"
   ],
   "homepage": "https://github.com/mikeham98/react-awesome-image-slider",

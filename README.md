@@ -1,37 +1,37 @@
-# 📅 React Awesome Calendar 🌈
+# 📷 React Awesome Image Viewer 🌈
 <div align="center">
-  <a href="https://github.com/mikeham98/react-awesome-calendar">
-    <img width="250" height="250" src="https://raw.githubusercontent.com/mikeham98/react-awesome-calendar/master/assets/react-awesome-calendar.svg?sanitize=true">
+  <a href="https://github.com/mikeham98/react-awesome-image-slider">
+    <img width="250" height="250" src="https://raw.githubusercontent.com/mikeham98/react-awesome-image-slider/master/assets/react-awesome-image-slider.svg?sanitize=true">
   </a>
 </div>
 
-*react-awesome-calendar* is a library that allows you to easily add a calendar to your application. React Awesome Calendar also supports the ability to display events.
+*react-awesome-image-viewer* is a library that allows you to easily add an image viewer to your application. There are two tranisition types available these being fade, and slide.
 
 ## Installation
 ```bash
-npm install --save react-awesome-calendar
+npm install --save react-awesome-image-slider
 ```
 
 ## Examples
 <div>
 <div style="display: inline-block; margin-right: 20px;">
 <h3>Monthly</h3>
-<img src="https://raw.githubusercontent.com/mikeham98/react-awesome-calendar/develop/assets/monthly.jpg" height="300">
+<img src="https://raw.githubusercontent.com/mikeham98/react-awesome-image-slider/develop/assets/monthly.jpg" height="300">
 </div>
 
 <div style="display: inline-block; margin-right: 20px;">
 <h3>Daily</h3>
-<img src="https://raw.githubusercontent.com/mikeham98/react-awesome-calendar/develop/assets/daily.jpg" height="300">
+<img src="https://raw.githubusercontent.com/mikeham98/react-awesome-image-slider/develop/assets/daily.jpg" height="300">
 </div>
 
 <div style="display: inline-block; margin-right: 20px;">
 <h3>Yearly</h3>
-<img src="https://raw.githubusercontent.com/mikeham98/react-awesome-calendar/develop/assets/yearly.jpg" height="300">
+<img src="https://raw.githubusercontent.com/mikeham98/react-awesome-image-slider/develop/assets/yearly.jpg" height="300">
 </div>
 
 ## Basic use
 ```bash
-import Calendar from 'react-awesome-calendar';
+import Calendar from 'react-awesome-image-slider';
 
 const events = [{
     id: 1,
@@ -65,17 +65,12 @@ class MyComponent extends React.Component {
 
 ```
 
-## Calendar
+## ImageViewer
 ### Props
 #### Summary
 |Name                   |Type         |Description                                                                                                   |
 |-----------------------|-------------|--------------------------------------------------------------------------------------------------------------|
 |events                 |array        |Events is an array that can be passed into the calendar and will render events on the Monthly and Daily view  |
-|header                 |component    |This allows you to provide a custom header component for the calendar                                         |
-|onChange               |function     |This will be called every time the calendar changes date or mode                                              |
-|onClickEvent           |function     |This function is called on click of an event on the daily mode                                                |
-|onClickTimeLine        |function     |This function is called on click of the timeline present on the daily calendar mode                                                |
-|ref                    |ref          |By passing in a ref it enables the ability to call methods on the Calendar class e.g. getDetails              |                         |
 
 #### events
 
@@ -171,7 +166,7 @@ mode, year, month, day.
 ##### Example
 ```bash
 import React from 'react';
-import Calendar from "react-awesome-calendar";
+import Calendar from "react-awesome-image-slider";
 
 export default class Component extends React.Component {
     constructor(props) {

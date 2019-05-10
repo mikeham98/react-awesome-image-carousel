@@ -1,168 +1,41 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Image from '../Image';
+import styles from './index.styles.scss';
 
-export default class ImageSlider extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      current: 0,
-      pause: false,
-      autoPlayIntervalId: undefined,
-      pauseTimeoutId: undefined,
-    };
-    this.showPrevImage = this.showPrevImage.bind(this);
-    this.showNextImage = this.showNextImage.bind(this);
-    this.startAutoPlay = this.startAutoPlay.bind(this);
+export default class ImageSlider extends React.Component {
+  componentDidUpdate() {
+    const { current } = this.props;
+    document.getElementById('imageSlider').style.transform = `translateX(-${100 * current}%)`;
   }
 
-  componentDidMount() {
-    if (this.props.auto) {
-      this.startAutoPlay();
-    }
-    if (this.props.fade) {
-      this.setTransitionFadeDuration();
-    }
-  }
-
-  startAutoPlay() {
-    const autoPlayIntervalId = setInterval(this.showNextImage, this.props.autoDuration * 1000);
-    this.setState({
-      autoPlayIntervalId,
-    });
-  }
-
-  stopAutoPlay() {
-    clearTimeout(this.state.autoPlayIntervalId);
-  }
-
-  handlePause() {
-    clearTimeout(this.state.pauseTimeoutId);
-    this.stopAutoPlay();
-    const pauseTimeoutId = setTimeout(() => {
-      this.showNextImage();
-      this.startAutoPlay();
-    }, this.props.coolOff * 1000);
-    this.setState({ pauseTimeoutId });
-  }
-
-  setTransitionFadeDuration() {
-    let images = document.getElementsByClassName('fadeImage'),
-      size = images.length;
-
-    for (let i = 0; i < size; i++) {
-      let image = images[i];
-      image.style.transitionDuration = `${this.props.fadeDuration}s`;
-    }
-  }
-
-  returnImage() {
+  returnImages() {
     const { images } = this.props;
-    const { current } = this.state;
-    if (Array.isArray(images) && images.length) {
-      return images.map((image, index) => {
-        const isCurrent = index === current;
-        return (
-          <Image
-            key={`image-${index}`}
-            fade={this.props.fade}
-            isCurrent={isCurrent}
-            src={image.src}
-          />
-        );
-      });
-    }
-  }
-
-  getPrevIndex() {
-    const numberOfImages = this.props.images.length;
-    const { current } = this.state;
-    if (numberOfImages) {
-      let prev = current - 1;
-      if (prev < 0) {
-        prev = numberOfImages - 1;
-      }
-      return prev;
-    }
-  }
-
-  getNextIndex() {
-    const numberOfImages = this.props.images.length;
-    const { current } = this.state;
-    if (numberOfImages) {
-      let next = current + 1;
-      if (next === numberOfImages) {
-        next = 0;
-      }
-      return next;
-    }
-  }
-
-  showPrevImage(clicked) {
-    const prevImage = this.getPrevIndex();
-    if (clicked && this.props.auto && this.props.coolOff) {
-      this.handlePause();
-    }
-    this.setState({
-      current: prevImage,
-    });
-  }
-
-  showNextImage(clicked) {
-    const nextImage = this.getNextIndex();
-    if (clicked && this.props.auto && this.props.coolOff) {
-      this.handlePause();
-    }
-    this.setState({
-      current: nextImage,
-    });
-  }
-
-  returnButtons() {
-    const { customPrevButton, customNextButton } = this.props;
-    const onClickPrev = () => this.showPrevImage(true);
-    const onClickNext = () => this.showNextImage(true);
-
-    let CustomPrevButton = customPrevButton;
-    let CustomNextButton = customNextButton;
-    const prevProps = {
-      onClick: onClickPrev,
-    };
-    const nextProps = {
-      onClick: onClickNext,
-    };
-    return (
-      <div>
-        {CustomPrevButton ? <CustomPrevButton {...prevProps}/> : <button onClick={onClickPrev}>prev</button>}
-        {CustomNextButton ? <CustomNextButton {...nextProps}/> : <button onClick={onClickNext}>next</button>}
-      </div>
-    );
+    return images.map((image, index) => (
+      <img
+        key={index}
+        src={image.src}
+        style={{ left: `${index * 100}%` }}
+        className={styles.slideModeImage}
+      />
+    ))
   }
 
   render() {
+    const { transitionDuration } = this.props;
     return (
-      <div>
-        {this.returnButtons()}
-        {this.returnImage()}
+      <div
+        className={styles.imageSliderWrapper}
+        style={{ transitionDuration: `${transitionDuration}s` }}
+        id={'imageSlider'}
+      >
+        {this.returnImages()}
       </div>
     );
   }
 }
 
 ImageSlider.propTypes = {
-  auto: PropTypes.bool,
-  autoDuration: PropTypes.number,
-  coolOff: PropTypes.number,
-  customPrevButton: PropTypes.func,
-  customNextButton: PropTypes.func,
-  fade: PropTypes.bool,
-  fadeDuration: PropTypes.number,
-};
-
-ImageSlider.defaultProps = {
-  auto: false,
-  autoDuration: 3,
-  coolOff: 6,
-  fade: false,
-  fadeDuration: 0.3,
+  images: PropTypes.array,
+  current: PropTypes.number,
+  transitionDuration: PropTypes.number,
 };
