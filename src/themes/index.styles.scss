@@ -1,10 +1,10 @@
-.imageViewerWrapper {
+.imageCarouselWrapper {
   width: 100%;
   height: 100%;
   transition-timing-function: ease-in-out;
 }
 
-.imageViewerImage {
+.imageCarouselImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -13,17 +13,17 @@
   left: 0;
 }
 
-.imageViewerSliderWrapper {
+.imageCarouselSliderWrapper {
   width: 100%;
   height: 100%;
 }
 
-.imageViewerFadeImage {
+.imageCarouselFadeImage {
   transition-property: opacity;
   transition-timing-function: ease-in-out;
 }
 
-.imageViewerButtonWrapper {
+.imageCarouselButtonWrapper {
   height: 50px;
   width: 50px;
   position: absolute;
@@ -36,15 +36,15 @@
   z-index: 10;
 }
 
-.imageViewerLeftButtonWrapper {
+.imageCarouselLeftButtonWrapper {
   left: 0;
 }
 
-.imageViewerRightButtonWrapper {
+.imageCarouselRightButtonWrapper {
   right: 0;
 }
 
-.imageViewerRightButton {
+.imageCarouselRightButton {
   transform: rotate(180deg);
   transform-origin: center;
 }
