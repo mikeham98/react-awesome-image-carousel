@@ -170,6 +170,7 @@ ImageViewer.propTypes = {
   disableButtons: PropTypes.bool,
   customPrevButton: PropTypes.func,
   customNextButton: PropTypes.func,
+  images: PropTypes.array,
   transition: PropTypes.string,
   transitionDuration: PropTypes.number,
 };
@@ -179,6 +180,7 @@ ImageViewer.defaultProps = {
   autoDuration: 3,
   disableButtons: false,
   coolOff: 6,
+  images: [],
   transition: slide,
   transitionDuration: 0.3,
 };

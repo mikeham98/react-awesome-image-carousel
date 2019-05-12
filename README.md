@@ -70,5 +70,6 @@ export default class Example extends React.Component {
 |disableButtons         |boolean      |This will remove the previous and next buttons  |
 |customPrevButton       |component    |This will remove the default left button and use a your custom component, an onClick prop will be passed in  |
 |customNextButton       |component    |This will remove the default right button and use a your custom component, an onClick prop will be passed in  |
+|images             |array       |This should be an array of objects with a src key value pair|
 |transition             |string       |This can either be set to 'fade' or 'slide' which will set the transition type of the images |
 |transitionDuration     |number (seconds)       |This is the duration of the transition  |
