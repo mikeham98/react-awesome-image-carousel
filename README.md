@@ -23,6 +23,7 @@ npm install --save react-awesome-image-viewer
 <h3>Fade</h3>
 <img src="https://raw.githubusercontent.com/mikeham98/react-awesome-image-viewer/master/assets/fade.gif" height="300">
 </div>
+</div>
 
 ## Basic use
 ```bash
