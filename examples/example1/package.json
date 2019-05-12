@@ -1,12 +1,12 @@
 {
-  "name": "react-awesome-image-slider-example1",
+  "name": "react-awesome-image-viewer-example1",
   "version": "0.0.1",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --watch",
     "build": "webpack --mode production",
     "fix-code": "prettier-eslint --write './src/**/*.{js,jsx}' ",
     "fix-styles": "prettier-stylelint --write './src/**/*.{css,scss}' ",
-    "updateLink": "npm rm react-awesome-image-slider -g && npm link react-awesome-image-slider"
+    "updateLink": "npm rm react-awesome-image-viewer -g && npm link react-awesome-image-viewer"
   },
   "browserslist": [
     ">0.2%",

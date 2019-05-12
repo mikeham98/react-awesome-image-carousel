@@ -1,3 +1,3 @@
-import ImageViewer from './ImageViewer/';
+import ImageViewer from './ImageViewer';
 
 export default ImageViewer;

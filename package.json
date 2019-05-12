@@ -12,8 +12,8 @@
     "react-awesome-image-viewer",
     "awesome"
   ],
-  "homepage": "https://github.com/mikeham98/react-awesome-image-slider",
-  "bugs": "https://github.com/mikeham98/react-awesome-image-slider/issues",
+  "homepage": "https://github.com/mikeham98/react-awesome-image-viewer",
+  "bugs": "https://github.com/mikeham98/react-awesome-image-viewer/issues",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack --watch --mode production",
@@ -35,7 +35,8 @@
     "classnames": "^2.2.6",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "react-transition-group": "^4.0.0"
+    "react-transition-group": "^4.0.0",
+    "url-loader": "^1.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
