@@ -9,7 +9,7 @@ export default class ImageFader extends React.PureComponent {
   }
 
   setTransitionFadeDuration() {
-    let images = document.getElementsByClassName('imageViewerFadeImage');
+    let images = document.getElementsByClassName('imageCarouselFadeImage');
     let size = images.length;
 
     for (let i = 0; i < size; i++) {
@@ -23,7 +23,7 @@ export default class ImageFader extends React.PureComponent {
     return (
       <img
         src={src}
-        className={classNames([styles.imageViewerWrapper, styles.imageViewerImage,styles.imageViewerFadeImage])}
+        className={classNames([styles.imageCarouselWrapper, styles.imageCarouselImage,styles.imageCarouselFadeImage])}
         style={{
           opacity: isCurrent ? 1 : 0
         }}

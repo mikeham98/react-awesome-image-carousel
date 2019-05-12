@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageViewer from 'react-awesome-image-viewer';
+import ImageCarousel from 'react-awesome-image-carousel';
 import image1 from '../assets/img1.jpeg';
 import image2 from '../assets/img2.jpeg';
 import image3 from '../assets/img3.jpeg';
@@ -17,7 +17,7 @@ class App extends React.Component {
   render() {
     return (
       <div style={{width: '100vw', height: '100vh', position: 'relative', overflow: 'hidden'}}>
-        <ImageViewer
+        <ImageCarousel
           transition={'fade'}
           transitionDuration={0.3}
           auto

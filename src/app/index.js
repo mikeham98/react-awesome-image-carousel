@@ -1,3 +1,3 @@
-import ImageViewer from './ImageViewer';
+import ImageCarousel from './ImageCarousel';
 
-export default ImageViewer;
+export default ImageCarousel;

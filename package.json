@@ -1,19 +1,20 @@
 {
-  "name": "react-awesome-image-viewer",
+  "name": "react-awesome-image-carousel",
   "version": "0.0.2",
   "license": "MIT",
   "author": "Michael Hamilton",
-  "description": "An easy to use React Image Viewer component",
+  "description": "An easy to use React Image Carousel component",
   "keywords": [
     "image",
     "slider",
+    "carousel",
     "viewer",
     "react",
-    "react-awesome-image-viewer",
+    "react-awesome-image-carousel",
     "awesome"
   ],
-  "homepage": "https://github.com/mikeham98/react-awesome-image-viewer",
-  "bugs": "https://github.com/mikeham98/react-awesome-image-viewer/issues",
+  "homepage": "https://github.com/mikeham98/react-awesome-image-carousel",
+  "bugs": "https://github.com/mikeham98/react-awesome-image-carousel/issues",
   "main": "build/index.js",
   "scripts": {
     "start": "webpack --watch --mode production",

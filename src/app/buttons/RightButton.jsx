@@ -6,11 +6,11 @@ import chevron from './chevron.svg';
 export default class RightButton extends React.Component {
   render() {
     return (
-      <div className={classNames([styles.imageViewerButtonWrapper,styles.imageViewerRightButtonWrapper])}>
+      <div className={classNames([styles.imageCarouselButtonWrapper,styles.imageCarouselRightButtonWrapper])}>
         <img
           onClick={this.props.onClick}
           src={chevron}
-          className={styles.imageViewerRightButton}
+          className={styles.imageCarouselRightButton}
         />
       </div>
     );

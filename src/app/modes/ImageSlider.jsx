@@ -15,7 +15,7 @@ export default class ImageSlider extends React.Component {
         key={index}
         src={image.src}
         style={{ left: `${index * 100}%` }}
-        className={styles.imageViewerImage}
+        className={styles.imageCarouselImage}
       />
     ));
   }
@@ -24,7 +24,7 @@ export default class ImageSlider extends React.Component {
     const { transitionDuration } = this.props;
     return (
       <div
-        className={styles.imageViewerSliderWrapper}
+        className={styles.imageCarouselSliderWrapper}
         style={{ transitionDuration: `${transitionDuration}s` }}
         id={'imageSlider'}
       >

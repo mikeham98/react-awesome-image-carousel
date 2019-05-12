@@ -8,7 +8,9 @@ import RightButton from './buttons/RightButton';
 const fade = 'fade';
 const slide = 'slide';
 
-export default class ImageViewer extends React.PureComponent {
+//TODO: make fade/slider consistent
+
+export default class ImageCarousel extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -163,7 +165,7 @@ export default class ImageViewer extends React.PureComponent {
   }
 }
 
-ImageViewer.propTypes = {
+ImageCarousel.propTypes = {
   auto: PropTypes.bool,
   autoDuration: PropTypes.number,
   coolOff: PropTypes.number,
@@ -175,7 +177,7 @@ ImageViewer.propTypes = {
   transitionDuration: PropTypes.number,
 };
 
-ImageViewer.defaultProps = {
+ImageCarousel.defaultProps = {
   auto: false,
   autoDuration: 3,
   disableButtons: false,
