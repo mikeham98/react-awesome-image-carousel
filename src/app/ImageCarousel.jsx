@@ -4,6 +4,7 @@ import ImageFader from './modes/ImageFader';
 import ImageSlider from './modes/ImageSlider';
 import LeftButton from './buttons/LeftButton';
 import RightButton from './buttons/RightButton';
+import Dots from './dots/Dots';
 
 const fade = 'fade';
 const slide = 'slide';
@@ -155,11 +156,24 @@ export default class ImageCarousel extends React.PureComponent {
     );
   }
 
+  returnDots() {
+    if(this.props.dots) {
+      return (
+        <Dots
+          current={this.state.current}
+          number={this.props.images.length}
+          onClick={(current) => this.setState({current})}
+        />
+      );
+    }
+  }
+
   render() {
     return (
       <React.Fragment>
         {!this.props.disableButtons && this.returnButtons()}
         {this.returnImage()}
+        {this.returnDots()}
       </React.Fragment>
     );
   }
@@ -169,6 +183,7 @@ ImageCarousel.propTypes = {
   auto: PropTypes.bool,
   autoDuration: PropTypes.number,
   coolOff: PropTypes.number,
+  dots: PropTypes.bool,
   disableButtons: PropTypes.bool,
   customPrevButton: PropTypes.func,
   customNextButton: PropTypes.func,
@@ -180,6 +195,7 @@ ImageCarousel.propTypes = {
 ImageCarousel.defaultProps = {
   auto: false,
   autoDuration: 3,
+  dots: false,
   disableButtons: false,
   coolOff: 6,
   images: [],

@@ -68,6 +68,7 @@ export default class Example extends React.Component {
 |autoDuration           |number (seconds)      |This sets the duration of when to automatically transition to the next image  |
 |coolOff                |number (seconds)       |This is the duration for how long an image pauses before resuming the auto image transition when the next or previous buttons are clicked  |
 |disableButtons         |boolean      |This will remove the previous and next buttons  |
+|dots         |boolean      |This will add click-able dots to the bottom of the slider to allow the user to navigate the slides  |false         |
 |customPrevButton       |component    |This will remove the default left button and use a your custom component, an onClick prop will be passed in  |
 |customNextButton       |component    |This will remove the default right button and use a your custom component, an onClick prop will be passed in  |
 |images             |array       |This should be an array of objects with a src key value pair|
