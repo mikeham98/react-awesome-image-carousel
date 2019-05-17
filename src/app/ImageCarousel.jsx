@@ -31,6 +31,11 @@ export default class ImageCarousel extends React.PureComponent {
     }
   }
 
+  componentWillUnmount() {
+    clearInterval(this.state.autoPlayIntervalId);
+    clearTimeout(this.state.pauseTimeoutId);
+  }
+
   startAutoPlay() {
     const autoPlayIntervalId = setInterval(this.showNextImage, this.props.autoDuration * 1000);
     this.setState({
